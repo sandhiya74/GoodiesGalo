@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 
@@ -17,10 +18,11 @@ public class Cart {
 	@Column(nullable=false)
 	int Quantity_int;
 	
-	@Column(nullable=false)
+	
+	@ManyToOne
 	Customer CustDetails;
 	
-	@Column(nullable=false)
+	@ManyToOne
 	Product ProdDetails;
 
 	public int getCart_id() {

@@ -1,10 +1,13 @@
 package com.niit.GoodiesGalo.Model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
@@ -15,6 +18,7 @@ public class Category {
 	
 	@Column(nullable=false, unique=true)
 	String cat_Name;
+
 
 	public int getCat_Id() {
 		return cat_Id;
