@@ -1,6 +1,7 @@
 package com.niit.GoodiesGalo.Model;
 
-import javax.annotation.processing.Generated;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
@@ -34,6 +36,10 @@ public class Product {
 	
 	@ManyToOne
 	Category pro_Category;
+	
+	@javax.persistence.Transient
+	MultipartFile pro_Images;
+	
 
 	public int getPro_Id() {
 		return pro_Id;
@@ -81,6 +87,14 @@ public class Product {
 
 	public void setPro_Category(Category pro_Category) {
 		this.pro_Category = pro_Category;
+	}
+
+	public MultipartFile getPro_Images() {
+		return pro_Images;
+	}
+
+	public void setPro_Images(MultipartFile pro_Images) {
+		this.pro_Images = pro_Images;
 	}
 
 	
