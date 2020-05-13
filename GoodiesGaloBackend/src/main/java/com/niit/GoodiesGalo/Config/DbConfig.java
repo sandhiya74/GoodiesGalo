@@ -36,13 +36,13 @@ public class DbConfig {
 	}
 
 	@Bean(name = "sessionfactory")
-	SessionFactory mySessionFactory() {
+	LocalSessionFactoryBean mySessionFactory() {
 		LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
 		localSessionFactoryBean.setDataSource(myDataSource());
 		localSessionFactoryBean.setHibernateProperties(myDBProperties());
 		localSessionFactoryBean.setPackagesToScan("com.niit.GoodiesGalo.Model");
 
-		return (SessionFactory) localSessionFactoryBean;
+		return  localSessionFactoryBean;
 	}
 
 	@Autowired

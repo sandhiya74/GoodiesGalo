@@ -15,7 +15,7 @@ public interface IProductDAO {
 	
 	public ArrayList<Product> allProduct();
 	
-	public Product oneProduct(int prodid);
+	public Product oneProduct(int proid);
 	
 	public ArrayList<Product> allProductByCategory(Category category);
 

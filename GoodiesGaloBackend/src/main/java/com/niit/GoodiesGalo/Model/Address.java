@@ -12,82 +12,82 @@ public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    int Address_id;
+    int address_Id;
 	
 	@Column(nullable=false)
-	String Name;
+	String name;
 	
 	@Column(nullable=false)
-	String Line1;
+	String line1;
 	
 	@Column(nullable=false)
-	String Line2;
+	String line2;
 	
 	@Column(nullable=false)
-	String Area;
+	String area;
 	
 	@Column(nullable=false)
-	String Pincode;
+	String pincode;
 	
 	@ManyToOne
-	Customer Customer;
+	Customer customer;
 
-	public int getAddress_id() {
-		return Address_id;
+	public int getAddress_Id() {
+		return address_Id;
 	}
 
-	public void setAddress_id(int address_id) {
-		Address_id = address_id;
+	public void setAddress_Id(int address_Id) {
+		this.address_Id = address_Id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getLine1() {
-		return Line1;
+		return line1;
 	}
 
 	public void setLine1(String line1) {
-		Line1 = line1;
+		this.line1 = line1;
 	}
 
 	public String getLine2() {
-		return Line2;
+		return line2;
 	}
 
 	public void setLine2(String line2) {
-		Line2 = line2;
+		this.line2 = line2;
 	}
 
 	public String getArea() {
-		return Area;
+		return area;
 	}
 
 	public void setArea(String area) {
-		Area = area;
+		this.area = area;
 	}
 
 	public String getPincode() {
-		return Pincode;
+		return pincode;
 	}
 
 	public void setPincode(String pincode) {
-		Pincode = pincode;
+		this.pincode = pincode;
 	}
 
 	public Customer getCustomer() {
-		return Customer;
+		return customer;
 	}
 
 	public void setCustomer(Customer customer) {
-		Customer = customer;
+		this.customer = customer;
 	}
-	
+
 	
 	
 }

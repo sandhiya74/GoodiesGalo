@@ -1,7 +1,6 @@
 package com.niit.GoodiesGalo.Model;
 
-import java.sql.Date;
-
+import java.util.Date;  
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,73 +13,73 @@ import javax.persistence.TemporalType;
 public class UserOrders {
 	
 	@Id
-	String Order_id;
+	String order_Id;
 	
 	@Column(nullable=false)
-	float Total_float;
+	float total;
 	
 	@ManyToOne
-	Product Productdetails;
+	Product productdetails;
 	
 	@ManyToOne
-	Address Address;
+	Address address;
 	
 	@ManyToOne
-	Customer Customerdetails;
+	Customer customerdetails;
 	
 	@Column(nullable=false)
  @Temporal(TemporalType.DATE)
-	 Date order_date;
+	 Date order_Date;
 
-	public String getOrder_id() {
-		return Order_id;
+	public String getOrder_Id() {
+		return order_Id;
 	}
 
-	public void setOrder_id(String order_id) {
-		Order_id = order_id;
+	public void setOrder_Id(String order_Id) {
+		this.order_Id = order_Id;
 	}
 
-	public float getTotal_float() {
-		return Total_float;
+	public float getTotal() {
+		return total;
 	}
 
-	public void setTotal_float(float total_float) {
-		Total_float = total_float;
+	public void setTotal(float total) {
+		this.total = total;
 	}
 
 	public Product getProductdetails() {
-		return Productdetails;
+		return productdetails;
 	}
 
 	public void setProductdetails(Product productdetails) {
-		Productdetails = productdetails;
+		this.productdetails = productdetails;
 	}
 
 	public Address getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(Address address) {
-		Address = address;
+		this.address = address;
 	}
 
 	public Customer getCustomerdetails() {
-		return Customerdetails;
+		return customerdetails;
 	}
 
 	public void setCustomerdetails(Customer customerdetails) {
-		Customerdetails = customerdetails;
+		this.customerdetails = customerdetails;
 	}
 
-	public Date getOrder_date() {
-		return order_date;
+	public Date getOrder_Date() {
+		return order_Date;
 	}
 
-	public void setOrder_date(Date order_date) {
-		this.order_date = order_date;
+	public void setOrder_Date(Date order_Date) {
+		this.order_Date = order_Date;
 	}
 
-
+	
 	
 	
 }

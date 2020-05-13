@@ -1,5 +1,3 @@
-
-
 package com.niit.GoodiesGalo.DAO;
 
 import java.util.ArrayList;
@@ -12,16 +10,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.GoodiesGalo.Model.Category;
 
-@Repository("CatagoryDAO")
+@Repository("categorydao")
 @Transactional
 
-public class CategoryDAOImpl implements ICategoryDAO {
+public class CategoryDAOImpl implements ICategoryDAO 
+{
 	@Autowired
 	SessionFactory sessionfactory;
 	@Override
-	public boolean addCategory(Category category) {
+	public boolean addCategory(Category category) 
+	{
 		try {
-			sessionfactory.getCurrentSession().save("category");
+			sessionfactory.getCurrentSession().save(category);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -32,7 +32,7 @@ public class CategoryDAOImpl implements ICategoryDAO {
 	public boolean updateCategory(Category category) {
 
 		try {
-			sessionfactory.getCurrentSession().update("category");
+			sessionfactory.getCurrentSession().update(category);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -42,7 +42,7 @@ public class CategoryDAOImpl implements ICategoryDAO {
 	@Override
 	public boolean deleteCategory(Category category) {
 		try {
-			sessionfactory.getCurrentSession().delete("category");
+			sessionfactory.getCurrentSession().delete(category);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -62,13 +62,11 @@ public class CategoryDAOImpl implements ICategoryDAO {
 
 	@Override
 	public Category oneCategory(String catname) {
-		try
-		{
-			Category category = (Category) sessionfactory.getCurrentSession().createCriteria(Category.class).add(Restrictions.eq("cat_name",catname)).uniqueResult();
+		try {
+			Category category = (Category) sessionfactory.getCurrentSession().createCriteria(Category.class)
+					.add(Restrictions.eq("cat_Name", catname)).uniqueResult();
 			return category;
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			return null;
 		}
 	}

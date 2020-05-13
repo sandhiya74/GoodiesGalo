@@ -1,6 +1,5 @@
-package com.niit.GoodiesGalo.Model;
-
-import javax.persistence.Column;
+package com.niit.GoodiesGalo.Model; 
+import javax.persistence.Column; 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,48 +12,50 @@ public class Cart {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int Cart_id;
+	int cart_Id;
 	
 	@Column(nullable=false)
-	int Quantity_int;
+	int quantity;
 	
 	
 	@ManyToOne
-	Customer CustDetails;
+	Customer custDetails;
 	
 	@ManyToOne
-	Product ProdDetails;
+	Product prodDetails;
 
-	public int getCart_id() {
-		return Cart_id;
+	public int getCart_Id() {
+		return cart_Id;
 	}
 
-	public void setCart_id(int cart_id) {
-		Cart_id = cart_id;
+	public void setCart_Id(int cart_Id) {
+		this.cart_Id = cart_Id;
 	}
 
-	public int getQuantity_int() {
-		return Quantity_int;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setQuantity_int(int quantity_int) {
-		Quantity_int = quantity_int;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Customer getCustDetails() {
-		return CustDetails;
+		return custDetails;
 	}
 
 	public void setCustDetails(Customer custDetails) {
-		CustDetails = custDetails;
+		this.custDetails = custDetails;
 	}
 
 	public Product getProdDetails() {
-		return ProdDetails;
+		return prodDetails;
 	}
 
 	public void setProdDetails(Product prodDetails) {
-		ProdDetails = prodDetails;
+		this.prodDetails = prodDetails;
 	}
 
+	
+	
 	}

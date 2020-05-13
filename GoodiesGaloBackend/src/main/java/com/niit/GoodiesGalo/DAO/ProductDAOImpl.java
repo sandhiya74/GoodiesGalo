@@ -10,86 +10,79 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.GoodiesGalo.Model.Category;
 import com.niit.GoodiesGalo.Model.Product;
-@Repository("ProductDAO")
+@Repository("productdao")
 @Transactional
 public class ProductDAOImpl implements IProductDAO {
 	@Autowired
 	SessionFactory sessionfactory;
-	
+
 	@Override
 	public boolean addProduct(Product product) {
+
 		try {
-			sessionfactory.getCurrentSession().save("product");
+			sessionfactory.getCurrentSession().save(product);
 			return true;
-		} 
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			return false;
 		}
+
 	}
 
 	@Override
 	public boolean updateProduct(Product product) {
 		try {
-			sessionfactory.getCurrentSession().update("product");
+			sessionfactory.getCurrentSession().update(product);
 			return true;
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 			return false;
 		}
+
 	}
 
 	@Override
 	public boolean deleteProduct(Product product) {
 		try {
-			sessionfactory.getCurrentSession().delete("product");
+			sessionfactory.getCurrentSession().delete(product);
 			return true;
-		} 
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			return false;
 		}
+
 	}
 
 	@Override
 	public ArrayList<Product> allProduct() {
 		try {
 			ArrayList<Product> productlist = (ArrayList<Product>) sessionfactory.getCurrentSession()
-					.createQuery("from Product").list();
+					.createQuery("" + "from Product").list();
 			return productlist;
-		} 
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			return null;
 		}
+
 	}
 
 	@Override
-	public Product oneProduct(int prodid) {
-		try
-		{
-			Product product = (Product) sessionfactory.getCurrentSession().createCriteria(Product.class).add(Restrictions.eq("Name", prodid)).uniqueResult();
+	public Product oneProduct(int prod_id) {
+		try {
+			Product product = (Product) sessionfactory.getCurrentSession().createCriteria(Product.class)
+					.add(Restrictions.eq("pro_Id", prod_id)).uniqueResult();
 			return product;
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			return null;
 		}
 	}
 
 	@Override
 	public ArrayList<Product> allProductByCategory(Category category) {
-		
-		try
-		{
-			ArrayList<Product> productlist = (ArrayList<Product>) sessionfactory.getCurrentSession().createCriteria(Product.class).add(Restrictions.eq("Pro_category", category)).list();
+		try {
+
+			ArrayList<Product> productlist = (ArrayList<Product>) sessionfactory.getCurrentSession()
+					.createCriteria(Product.class).add(Restrictions.eq("pro_Category", category)).uniqueResult();
 			return productlist;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			return null;
 		}
-	
 	}
 
 }

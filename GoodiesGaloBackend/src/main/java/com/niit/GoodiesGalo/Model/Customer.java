@@ -1,11 +1,16 @@
 package com.niit.GoodiesGalo.Model;
-
+ 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+
 
 @Entity
 public class Customer {
@@ -13,16 +18,19 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int cust_id;
-	
+	@Email
 	@Column(nullable=false,unique=true)
 	String cust_Emailid;
 	
+	@Length(min = 3,message = "The minimum no. of charecter is 3")
 	@Column(nullable=false)
 	String cust_Name;
 	
+	@Pattern(regexp="[0-9]{10}",message="Mobile no. must be of Indian Standards")
 	@Column(nullable=false,unique=true)
 	String cust_Phone;
 	
+	@Pattern(regexp="^[a-zA-Z0-9]+$",message=" it will check for alphanumeric (Alpha Numeric) values.")
 	@Transient
 	@Column(nullable=false)
 	String password;
