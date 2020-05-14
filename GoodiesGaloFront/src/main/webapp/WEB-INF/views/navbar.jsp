@@ -33,27 +33,47 @@
 				<img src="${cr2}/img/logo1.png" width="60" height="50"
 					class="d-inline-block align-top"></a>
 				<div class="collapse navbar-collapse" id="collapse_target">
+					<c:choose>
+	        <c:when test="${sessionScope.adminrole}">
 					<ul class="navbar-nav mr-auto">
 
-						<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6>Home</h6></a></li>
+			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6 style="color:brown">Home</h6></a></li>
 						
-						<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/category"><h6>ManageCategory</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/category"><h6 style="color:brown">ManageCategory</h6></a></li>
 						
-						<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/product"><h6>ManageProducts</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/product"><h6 style="color:brown">ManageProducts</h6></a></li>
+			
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6 style="color:brown">Products</h6></a></li>			
 						
-						<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6>Products</h6></a></li>
+			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6 style="color:brown">AboutUs</h6></a></li>
 						
-						<li class="nav-item" ><a class="nav-link" href="login"><h6>Login</h6></a></li>
-						
-						<li class="nav-item" ><a class="nav-link" href="${cr2}/register"><h6>Registration</h6></a></li>
-						
-						<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6>AboutUs</h6></a></li>
-						
-						<li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6>ContactUs</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
 
+            <li class="nav-item" > <a class="nav-link" href="logout"><h6 style="color:brown">Logout</h6></a></li>
 
 					</ul>
-
+					
+					
+					</c:when>
+					<c:when test="${userrole }">
+					</c:when>
+					<c:otherwise>
+				<ul class="navbar-nav mr-auto">
+			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6 style="color:brown">Home</h6></a></li>
+						
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6 style="color:brown">Products</h6></a></li>
+			
+			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6 style="color:brown">AboutUs</h6></a></li>
+			
+		    <li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
+		    
+			 <li class="nav-item" ><a class="nav-link" href="login"><h6 style="color:brown">Login</h6></a></li>
+			 
+			  <li class="nav-item" ><a class="nav-link" href="${cr2}/register"><h6 style="color:brown">Register</h6></a></li>
+				</ul>
+					
+					</c:otherwise>
+					</c:choose>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search"
 							placeholder="Search" aria-label="Search">

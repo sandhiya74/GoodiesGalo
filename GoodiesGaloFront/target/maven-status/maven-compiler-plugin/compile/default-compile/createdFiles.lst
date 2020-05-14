@@ -1,4 +1,5 @@
 com\niit\GoodiesGalo\Controller\HomeController.class
 com\niit\GoodiesGalo\Controller\ProductController.class
+com\niit\GoodiesGalo\Controller\LoginController.class
 com\niit\GoodiesGalo\Controller\CategoryController.class
 com\niit\GoodiesGalo\Controller\RegisterController.class

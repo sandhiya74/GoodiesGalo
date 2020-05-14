@@ -1,4 +1,5 @@
- 
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<c:set var="cr2" value="${pageContext.request.contextPath}" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -12,6 +13,7 @@
       height: 100%;
   }
   </style>
+  
 </head>
 <body>
 
@@ -29,25 +31,25 @@
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active ">
-            <img src="img/banner1.jpg" class="d-block w-100" alt="image">
+            <img src="${cr2}/img/banner1.jpg" class="d-block w-100" alt="image">
           </div>
           <div class="carousel-item ">
-            <img src="img/banner 2.jpg" class="d-block w-100" alt="image">
+            <img src="${cr2}/img/banner 2.jpg" class="d-block w-100" alt="image">
           </div>
           <div class="carousel-item">
-            <img src="img/banner3.jpg" class="d-block w-100" alt="image">
+            <img src="${cr2}/img/banner3.jpg" class="d-block w-100" alt="image">
           </div>
           <div class="carousel-inner">
             <div class="carousel-item ">
-              <img src="img/banner4.jpg" class="d-block w-100" alt="image">
+              <img src="${cr2}/img/banner4.jpg" class="d-block w-100" alt="image">
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item ">
-                  <img src="img/banner5.jpg" class="d-block w-100" alt="image">
+                  <img src="${cr2}/img/banner5.jpg" class="d-block w-100" alt="image">
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item ">
-                      <img src="images/banner6.jpg" class="d-block w-100" alt="image">
+                      <img src="${cr2}/images/banner6.jpg" class="d-block w-100" alt="image">
                     </div>
           
         </div>

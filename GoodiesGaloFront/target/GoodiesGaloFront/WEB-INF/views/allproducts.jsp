@@ -51,8 +51,8 @@ font-style: oblique;
 		<div class="row">
 			<c:forEach items="${productlist}" var="p">
 				<div class="col-3">
-					<div class="card">
-						<img src="pimg/${p.pro_Id}.jpeg" class="card-img-top" />
+					<div class="card"> 
+						<img src="${cr2}/pimg/${p.pro_Id}.jpeg" class="card-img-top" />
 						<div class="card-body">
 							<div class="col-12">
 								<p class="card-title" data-toggle="tooltip"

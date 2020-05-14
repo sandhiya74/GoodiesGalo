@@ -1,174 +1,120 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<!DOCTYPE html>
+<html>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="script" href="js/jquery-3.4.1.min">
-        <link rel="script" href="js/bootstrap.min.js">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        
-        
-        <style>
-          * {
-    font-family: Arial, Verdana, sans-serif;
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-    list-style: none;
-    -webkit-tap-highlight-color: transparent;
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 }
 
-*::selection {
-    background-color: rgb(240, 93, 142);
+* {
+    box-sizing: border-box;
 }
 
-
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-image: url("images/wall6.jpg");!important;
-    overflow-x: hidden;
-    min-height: 100%;
-    user-select: none;
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: white;
 }
 
-.user_card {
-    height: 400px;
-    width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background:rgb(243, 193, 201);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 8px;
-    border-style: solid;
-  border-width: 5px;
-  border-color:rgb(230, 87, 134);
-  box-shadow: 0 0 0 0 !important;
-  outline: 0 0 0 0  !important;
-    border-radius: 5px;
-
-}
-/*  */
-.brand_logo {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-.form_container {
-    margin-top: 30px;
-}
-h1 {
-    font-weight: bold;
-    font-size: 43px;
-    font-style:italic;
-}
-
-.logo {
-    width: 40px;
-}
-
-.login_btn {
+input[type=text], input[type=password] {
     width: 100%;
-    background: brown !important;
-    color: white !important;
-    font-style:italic;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 }
 
-.login_btn:hover {
-    background: brown !important;
-    color: white !important;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+button {
+  background-color: brown;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
-.login_btn:active {
-    width: 100%;
-    background: #353535 !important;
-    color: white !important;
+button:hover {
+  opacity: 0.8;
 }
 
-.login_btn:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
 }
 
-.input-group-text {
-    background: brown !important;
-    color: white !important;
-    border: 0 !important;
-    border-radius: 0.25rem 0 0 0.25rem !important;
-}
-.input_user,
-.input_pass:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
 }
 
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: brown!important;
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
 }
 
-.groupe-liens {
-    margin-top: 15px;
+.container {
+  padding: 16px;
 }
 
-.liens {
-    color: brown;
-    font-style:italic;
+span.psw {
+  float: right;
+  padding-top: 16px;
 }
 
-.liens:hover {
-    color: #353535;
-    font-style:italic;
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
 }
-
-        </style>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-        <body>
-        <c:if test="${info}">
+</style>
+</head>
+<body>
+<c:if test="${info}">
 		<div class="alert alert-success">${message}</div>
 	</c:if>
-          <div class="container h-100">
-            <div class="d-flex justify-content-center h-100">
-                <div class="user_card">
-                    <div class="d-flex justify-content-center" style="color:brown">
-                        <h1>LOGIN</h1>
-                    </div>
-                    <div class="d-flex justify-content-center form_container">
-                        <form action="perform_login" method="post">
-                            <div class="input-group mb-3">
-                                
-                                <input type="text" name="user_name" class="form-control input_user" value="" placeholder="user_name" spellcheck="false">
-                            </div>
-                            <div class="input-group mb-2">
-                                
-                                <input type="password" name="user_password" class="form-control input_pass" value=""
-                                    placeholder="password" spellcheck="false">
-                            </div>
-                            <div class="d-flex justify-content-center mt-3 login_container">
-                                <button type="button" name="button" class="btn login_btn">Login</button>
-                            </div>
-                        </form>
-                    </div>
-    
-                    <div class="mt-4 groupe-liens">
-                        <div class="d-flex justify-content-center links">
-                            Don't have an account? <a href="#" class="ml-2 liens">Sign Up</a>
-                        </div>
-                        <div class="d-flex justify-content-center links">
-                            <a href="#" class="liens">Forgot your password?</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div style="width:40%;height:40%;margin-left:25%;">
+ <div class="col-12" style="margin-top: 1%">
+
+
+<h2 style="text-align:center">Login Form</h2>
+
+<form action="perform_login" method="post">
+   <div class="imgcontainer">
+    <img src="img/img_avatar2-3.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="user_name" id="user_name" required>
+
+    <label for="userpassword"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="user_password" id="user_password" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+  </div>
+  </div>
+</form>
+
+</body>
+</html>

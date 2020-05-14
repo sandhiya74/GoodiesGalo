@@ -38,25 +38,7 @@ public class HomeController {
 	    model.addAttribute("tittle","GoodiesGalo--contactus");
 	    return "index";
 	  }
-	@RequestMapping("/login")
-
-	  String LoginPage(@RequestParam(value="error",required=false, defaultValue ="false") boolean error,Model model)
-	  {
-		  if(error)
-		  {
-			  model.addAttribute("info",true);
-			  model.addAttribute("message","user name password incorrect");
-			  
-		  }
-		  else
-		  {
-			  model.addAttribute("info",false);
-			  model.addAttribute("message","");
-		  }
-	    model.addAttribute("loginpage",true);
-	    model.addAttribute("tittle","GoodiesGalo--login");
-	    return "index";
-	  }
+	
 	@RequestMapping("/allproducts")
 	String DisplayProduct(Model model)
 	{
