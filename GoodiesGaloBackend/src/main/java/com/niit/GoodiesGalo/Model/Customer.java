@@ -33,7 +33,7 @@ public class Customer {
 	@Pattern(regexp="^[a-zA-Z0-9]+$",message=" it will check for alphanumeric (Alpha Numeric) values.")
 	@Transient
 	@Column(nullable=false)
-	String password;
+	String cust_Password;
 
 	public int getCust_id() {
 		return cust_id;
@@ -67,12 +67,15 @@ public class Customer {
 		this.cust_Phone = cust_Phone;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getCust_Password() {
+		return cust_Password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setCust_Password(String cust_Password) {
+		this.cust_Password = cust_Password;
+	}
+
+	
 	}
 	
 	
@@ -81,4 +84,4 @@ public class Customer {
 	
 	
 
-}
+

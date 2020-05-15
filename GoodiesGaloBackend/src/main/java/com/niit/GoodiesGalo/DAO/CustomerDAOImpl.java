@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.GoodiesGalo.Model.Customer;
+import com.niit.GoodiesGalo.Model.CustomerCred;
 @Repository("customerdao")
 @Transactional
 public class CustomerDAOImpl implements ICustomerDao {
@@ -19,8 +20,16 @@ public class CustomerDAOImpl implements ICustomerDao {
 	public boolean addCustomer(Customer customer) {
 		try {
 			sessionfactory.getCurrentSession().save(customer);
+			CustomerCred cred=new CustomerCred();
+			cred.setCust_Emailid(customer.getCust_Emailid());
+			cred.setCust_Password(customer.getCust_Password());
+			cred.setCust_status("false");
+			cred.setCust_role("ROLE_CUSTOMER");
+			sessionfactory.getCurrentSession().save(cred);
 			return true;
-		} catch (Exception e) {
+		} 
+		catch (Exception e)
+		{
 			return false;
 		}
 	}
