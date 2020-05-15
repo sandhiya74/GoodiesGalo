@@ -12,7 +12,7 @@
               body{
 	
 	
-                background-image: url("images/wall6.jpg");
+                background-image: url("img/wall16.jpg");
               }
               .contactwel {
     width: 100%;

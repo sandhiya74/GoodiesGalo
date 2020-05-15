@@ -2,14 +2,20 @@ package com.niit.GoodiesGalo.Controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.GoodiesGalo.DAO.ICustomerDao;
+import com.niit.GoodiesGalo.Model.Customer;
+
 @Controller
 public class LoginController {
+	@Autowired
+	ICustomerDao customerdao;
 	@RequestMapping("/login")
 
 	  String LoginPage(@RequestParam(value="error",required=false, defaultValue ="false") boolean error,Model model)
@@ -42,7 +48,10 @@ public class LoginController {
 		}
 		else
 		{
-			
+			Customer customer=customerdao.selectCustomer(userid);
+			session.setAttribute("username", customer.getCust_Name().toUpperCase());
+			session.setAttribute("userrole", true);
+			session.setAttribute("adminrole", false);
 		}
 		model.addAttribute("indexpage",true);
 		return "index";

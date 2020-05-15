@@ -8,7 +8,7 @@
 <style>
 body {
 	font-family: Calibri;
-	background-color: white;
+	background-image: url("img/wall16.jpg");
 }
 
 * {

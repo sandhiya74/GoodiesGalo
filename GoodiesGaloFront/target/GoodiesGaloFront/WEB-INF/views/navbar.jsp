@@ -34,41 +34,56 @@
 					class="d-inline-block align-top"></a>
 				<div class="collapse navbar-collapse" id="collapse_target">
 					<c:choose>
-					<c:when test="${adminrole}">
+	        <c:when test="${sessionScope.adminrole}">
 					<ul class="navbar-nav mr-auto">
 
-			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6>Home</h6></a></li>
+			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6 style="color:brown">Home</h6></a></li>
 						
-			<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/category"><h6>ManageCategory</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/category"><h6 style="color:brown">ManageCategory</h6></a></li>
 						
-			<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/product"><h6>ManageProducts</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/admin/product"><h6 style="color:brown">ManageProducts</h6></a></li>
+			
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6 style="color:brown">Products</h6></a></li>			
 						
+			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6 style="color:brown">AboutUs</h6></a></li>
 						
-			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6>AboutUs</h6></a></li>
-						
-			<li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6>ContactUs</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
 
-            <li class="nav-item" >Hi ${sessionScop.username }<a class="nav-link" href=""><h6>Logout</h6></a></li>
+            <li class="nav-item" > <a class="nav-link" href="logout"><h6 style="color:brown">Logout</h6></a></li>
 
 					</ul>
 					
 					
 					</c:when>
 					<c:when test="${userrole }">
+					<ul class="navbar-nav mr-auto">
+			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6 style="color:brown">Home</h6></a></li>
+						
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6 style="color:brown">Products</h6></a></li>
+			
+			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6 style="color:brown">AboutUs</h6></a></li>
+			
+		    <li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
+		    
+		     <li class="nav-item" > <a class="nav-link" href="logout"><h6 style="color:brown">Logout</h6></a></li>
+		    
+			 
+				</ul>
 					</c:when>
 					<c:otherwise>
-			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6>Home</h6></a></li>
+				<ul class="navbar-nav mr-auto">
+			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6 style="color:brown">Home</h6></a></li>
 						
-			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproduct"><h6>Products</h6></a></li>
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6 style="color:brown">Products</h6></a></li>
 			
-			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6>AboutUs</h6></a></li>
+			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6 style="color:brown">AboutUs</h6></a></li>
 			
-		    <li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6>ContactUs</h6></a></li>
+		    <li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
 		    
-			 <li class="nav-item" ><a class="nav-link" href="login"><h6>Login</h6></a></li>
+			 <li class="nav-item" ><a class="nav-link" href="login"><h6 style="color:brown">Login</h6></a></li>
 			 
-			  <li class="nav-item" ><a class="nav-link" href="${cr2}/register"><h6>Register</h6></a></li>
-					
+			  <li class="nav-item" ><a class="nav-link" href="${cr2}/register"><h6 style="color:brown">Register</h6></a></li>
+				</ul>
 					
 					</c:otherwise>
 					</c:choose>

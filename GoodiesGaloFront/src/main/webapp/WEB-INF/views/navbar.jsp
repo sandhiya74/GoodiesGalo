@@ -56,6 +56,19 @@
 					
 					</c:when>
 					<c:when test="${userrole }">
+					<ul class="navbar-nav mr-auto">
+			<li class="nav=item"><a class="nav-link" href="${cr2}/home"><h6 style="color:brown">Home</h6></a></li>
+						
+			<li class="nav-item" ><a class="nav-link" href="${cr2}/allproducts"><h6 style="color:brown">Products</h6></a></li>
+			
+			<li class="nav-item " ><a class="nav-link" href="${cr2}/aboutus"><h6 style="color:brown">AboutUs</h6></a></li>
+			
+		    <li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
+		    
+		     <li class="nav-item" > <a class="nav-link" href="logout"><h6 style="color:brown">Logout</h6></a></li>
+		    
+			 
+				</ul>
 					</c:when>
 					<c:otherwise>
 				<ul class="navbar-nav mr-auto">

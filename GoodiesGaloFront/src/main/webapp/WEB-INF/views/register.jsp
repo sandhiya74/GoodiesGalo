@@ -10,17 +10,25 @@
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
+    background-image: url("img/wall16.jpg");
 }
 
 * {
     box-sizing: border-box;
+    
 }
 
 /* Add padding to containers */
 .container {
     padding: 16px;
-    background-color: white;
+   
+   border: 2px solid red;
+  border-radius: 8px;
+  border-color:brown;
+  border-width:5px;
+  background-image:url("img/wall16.jpg");
+  
+    
 }
 
 /* Full-width input fields */
@@ -102,19 +110,20 @@ a {
      <form:errors path="cust_Phone" cssStyle="color:Red"></form:errors><br>
      
     <label for="psw"><b style="font-size:130%;">Password</b></label>
-    <form:input type="password" placeholder="Enter Password" name="psw" path="password"/>
-    <form:errors path="password" cssStyle="color:Red"></form:errors><br>
+    <form:input type="password" placeholder="Enter Password" name="psw" path="cust_Password"/>
+    <form:errors path="cust_Password" cssStyle="color:Red"></form:errors><br>
 
    
     <hr>
     
 
     <button type="submit" class="registerbtn">Register</button>
-  </div>
-  
-  <div class="container signin">
+     <div class="container signin">
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
+  </div>
+  
+ 
 </form:form>
 
 </body>

@@ -102,8 +102,8 @@ a {
      <form:errors path="cust_Phone" cssStyle="color:Red"></form:errors><br>
      
     <label for="psw"><b style="font-size:130%;">Password</b></label>
-    <form:input type="password" placeholder="Enter Password" name="psw" path="password"/>
-    <form:errors path="password" cssStyle="color:Red"></form:errors><br>
+    <form:input type="password" placeholder="Enter Password" name="psw" path="cust_Password"/>
+    <form:errors path="cust_Password" cssStyle="color:Red"></form:errors><br>
 
    
     <hr>
