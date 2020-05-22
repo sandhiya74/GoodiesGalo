@@ -7,7 +7,7 @@
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
+   background-image: url("img/wall16.jpg");
 }
 
 * {
@@ -17,7 +17,12 @@ body {
 /* Add padding to containers */
 .container {
     padding: 16px;
-    background-color: white;
+    
+      border: 2px solid red;
+  border-radius: 8px;
+  border-color:brown;
+  border-width:5px;
+  background-image:url("img/wall16.jpg");
 }
 
 input[type=text], input[type=password] {
@@ -106,12 +111,13 @@ span.psw {
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
-  </div>
-
+    
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
+  </div>
+
   </div>
   </div>
 </form>

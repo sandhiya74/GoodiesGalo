@@ -78,7 +78,7 @@ font-style: oblique;
 
 							<div class="row">
 								<div class="col-6">
-									<a href="" class="btn btn-success" style="background-color: rgb(231, 120, 138)">Add to cart</a>
+									<a href="${cr2}/addtocart?productid=${p.pro_Id}" class="btn btn-success" style="background-color: rgb(231, 120, 138)">Add to cart</a>
 								</div>
 								<div class="col-6">
 									<a href="${cr2}/productdetails?prodid=${p.pro_Id}" class="btn btn-warning"  style="background-color: brown">View Details</a>

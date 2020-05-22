@@ -125,13 +125,13 @@ a {
 					<br> <label for="category_name"><b
 						style="font-size: 130%;">Category Name</b></label><br>
 					<form:select name="category_name" path="pro_Category.cat_Id">
-					
+
 						<c:forEach items="${categorylist}" var="c">
 							<option value="${c.cat_Id}">${c.cat_Name}</option>
 						</c:forEach>
 					</form:select>
 
-					<form:input type="file" path="pro_Images"/>
+					<form:input type="file" path="pro_Images" />
 
 
 					<button type="submit" class="registerbtn" style="font-size: 130%;"

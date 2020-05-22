@@ -65,7 +65,11 @@
 			
 		    <li class="nav-item" ><a class="nav-link" href="${cr2}/contactus"><h6 style="color:brown">ContactUs</h6></a></li>
 		    
-		     <li class="nav-item" > <a class="nav-link" href="logout"><h6 style="color:brown">Logout</h6></a></li>
+		       <li class="nav-item" ><a class="nav-link" href="${cr2}/user/viewcart"><i class="fa fa-shopping-cart"></i><sup>${cartqty}</sup></a></li>
+		       
+		      
+		    
+		     <li class="nav-item" > <a class="nav-link" href="${cr2}/logout"><h6 style="color:brown">Logout</h6></a></li>
 		    
 			 
 				</ul>
@@ -92,6 +96,7 @@
 							placeholder="Search" aria-label="Search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					</form>
+					
 
 				</div>
 		</div>
