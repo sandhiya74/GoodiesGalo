@@ -111,20 +111,9 @@
          <div class="container-fluid bg-primary py-3">
         <div class="container">
           <div class="row">
-            <div class="col-md-7">
-                <div class="row py-0">
-              <div class="col-sm-1 hidden-md-down">
-                  <a class="bg-circle bg-info" href="#">
-                    <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
-                  </a>
-                </div>
-                <div class="col-sm-11 text-white">
-                    <div><h3 style="color:brown">  Contact</h3>
-                        <p style="color:brown">   <span class="header-font"></span><span class="header-font"></span>9600921079</p>
-                    </div>
-                </div>
-                </div>
-            </div>
+            
+                
+                
             <div class="col-md-5">
               <div class="d-inline-block">
                 <div class="bg-circle-outline d-inline-block" style="background-color:#3b5998">

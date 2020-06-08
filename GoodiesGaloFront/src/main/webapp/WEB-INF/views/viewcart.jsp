@@ -1,21 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cr2" value="${pageContext.request.contextPath}" />
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-	rel="stylesheet">
 <style>
 .table>tbody>tr>td, .table>tfoot>tr>td {
 	vertical-align: middle;
+	 font-family:calibri;
+     font-size:25px;
 }
 
 @media screen and (max-width: 600px) {
@@ -35,8 +24,8 @@
 	}
 	table#cart thead {
 		display: none;
-		text-align:center;
-		margin:5%;
+		text-align: center;
+		margin: 5%;
 	}
 	table#cart tbody td {
 		display: block;
@@ -59,8 +48,10 @@
 	table#cart tfoot td .btn {
 		display: block;
 	}
+	
 }
 </style>
+
 <div class="container" style="margin-top: 5%">
 	<c:if test="${empty cartinfo}">
 		<h2 class="jumbotron">Cart is empty</h2>
@@ -70,7 +61,7 @@
 	<c:if test="${not empty cartinfo}">
 
 		<c:if test="${error}">
-			<div class="alert alert-danger"> 
+			<div class="alert alert-danger">
 				<strong>${message}</strong>
 			</div>
 		</c:if>
@@ -85,100 +76,103 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:set var="Total" value="0"/>
+				<c:set var="Total" value="0" />
 				<c:forEach items="${cartinfo}" var="p">
-				<c:set var="subtotal" value="${p.pro_Quantity*p.prodDetails.pro_Price}"></c:set>
-				<c:set var="total" value="${total+subtotal }"/>
-				
+					<c:set var="subtotal"
+						value="${p.pro_Quantity*p.prodDetails.pro_Price}"></c:set>
+
+
 					<tr>
 
 						<td data-th="Product">
 							<div class="row">
-								<div class="col-4">
+								<div class="col-6">
 									<img src="${cr2 }/pimg/${p.prodDetails.pro_Id}.jpeg" alt="..."
-										class="img-responsive" height="100%" />
-							</div>
+										class="img-responsive" height="100px" />
+								</div>
 								<div class="col-8">
-								<h3 class="nomargin" style="padding-top:50px;">${p.prodDetails.pro_Name}</h3>
-								<div>
-									<a href="${cr2}/user/deleteitem?cartid=${p.cart_Id}" class="btn btn-danger"><i class="fa fa-trash"></i>Remove</a>
-								</div>
-								<c:if test="${error && PID==p.prodDetails.pro_Id}">
-			<div  style="margin-top: 2%" class="alert alert-warning">
-				<strong>${message}</strong>
-			</div>
-		</c:if>
+									<h3 class="nomargin" style="padding-top: 50px;">${p.prodDetails.pro_Name}</h3>
+									<div>
+										<a href="${cr2}/user/deleteitem?cartid=${p.cart_Id}"
+											class="btn btn-danger"><i class="fa fa-trash"></i>Remove</a>
+									</div>
+									<c:if test="${error && PID==p.prodDetails.pro_Id}">
+										<div style="margin-top: 2%" class="alert alert-warning">
+											<strong>${message}</strong>
+										</div>
+									</c:if>
 								</div>
 							</div>
-							</td>
+						</td>
 						<td data-th="Price">${p.prodDetails.pro_Price}</td>
 						<td data-th="Quantity">
 							<div>
 								<form action="${cr2 }/addtocart" method="post">
-									
-												<input type="number" class="form-control" id="quantity" name="quantity" value="${p.pro_Quantity}">
-													<input type="hidden" value="${p.prodDetails.pro_Id }" id="productid" name="productid" >
-													<input type="hidden" value="true" id="cartpage" name="cartpage" >
 
-											
-											<button type="submit" class="btn btn-primary">
-												<i class="fa fa-plus"></i></button>
-											
+									<input type="number" class="form-control" id="quantity"
+										name="quantity" value="${p.pro_Quantity}"> <input
+										type="hidden" value="${p.prodDetails.pro_Id }" id="productid"
+										name="productid"> <input type="hidden" value="true"
+										id="cartpage" name="cartpage">
+
+
+									<button type="submit" class="btn btn-primary">
+										<i class="fa fa-plus"></i>
+									</button>
+
 								</form>
-								</div>
-								</td>
-								<td data-th="Total" class="text-center" colspan="1">
-								<lable>${p.prodDetails.pro_Price}</lable>
-								</td>
+							</div>
+						</td>
+						<td data-th="Total" class="text-center" colspan="1"><lable>${p.prodDetails.pro_Price}</lable>
+						</td>
 					</tr>
-					
+
 
 				</c:forEach>
 
 			</tbody>
 			<tfoot>
-			<tr>
+				<tr>
 					<td>Subtotal</td>
 					<td />
 					<td />
 					<td data-th="Total" class="text-center" colspan="1">${total }</td>
-					
-					</tr>
-					<tr>
+
+				</tr>
+				<tr>
 					<td>Shipping</td>
 					<td />
 					<td />
-					<td data-th="Total" class="text-center" colspan="1">
-					<c:if test="${total<1000 }">
-					<c:set var="shipping" value="0"></c:set>
+					<td data-th="Total" class="text-center" colspan="1"><c:if
+							test="${total<1000 }">
+							<c:set var="shipping" value="0"></c:set>
 			               FREE
-					</c:if>
-					<c:if test="${total>=1000 }">
-					<c:set var="shipping" value="100"></c:set>
+					</c:if> <c:if test="${total>=1000 }">
+							<c:set var="shipping" value="100"></c:set>
 			               ${shipping}
-					</c:if>
-						
-					</td>
-					
-					</tr>
-					<tr>
+					</c:if></td>
+
+				</tr>
+				<tr>
 					<td>Total</td>
 					<td />
 					<td />
 					<td data-th="Total" class="text-center" colspan="1">${total+shipping}</td>
-					
-					</tr>
-			
+
+				</tr>
+
 				<tr>
-					<td><a href="${contextroot }/allproducts" class="btn btn-warning"><i
-							class="fa fa-angle-left"></i> Continue Shopping</a></td>
+					<td><a href="${cr2}/allproducts"
+						class="btn btn-warning"><i class="fa fa-angle-left"></i>
+							Continue Shopping</a></td>
 					<td colspan="2" class="hidden-xs"></td>
 					<td />
 					<td />
-					
 
-					<td><a href="${cr2}/user/selectaddress" class="btn btn-success btn-block">Checkout
-							<i class="fa fa-angle-right"></i>
+
+					<td><a href="${cr2}/user/selectaddress"
+						class="btn btn-success btn-block">Checkout <i
+							class="fa fa-angle-right"></i>
 					</a></td>
 				</tr>
 			</tfoot>

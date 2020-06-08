@@ -233,7 +233,7 @@ transform
 			</aside>
 			<c:if test="${product.pro_Stock > 0 }">
 				<aside class="col-sm-3">
-					<form action="addtocart" method="post">
+					<form action="${cr2}/addtocart" method="post">
 					<div class="row">
 					<div class="col-4">
 					<label class="price-title">Quantity</label>
@@ -244,8 +244,8 @@ transform
 								<div class="form-group">
 
 									<input type="number" class="form-control" id="quantity"
-										name="quantity" value="${p.pro_Quantity}"> <input
-										type="hidden" value="${p.prodDetails.pro_Id }" id="productid"
+										name="quantity" value="1"> 
+										<input type="hidden" value="${product.pro_Id }" id="productid"
 										name="productid"> 
 								</div>
 							</div>

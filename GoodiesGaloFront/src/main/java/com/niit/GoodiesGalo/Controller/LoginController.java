@@ -1,6 +1,7 @@
 package com.niit.GoodiesGalo.Controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.http.HttpSession;
 
@@ -61,9 +62,17 @@ public class LoginController {
 			session.setAttribute("username", customer.getCust_Name().toUpperCase());
 			session.setAttribute("userrole", true);
 			session.setAttribute("adminrole", false);
+			float total=0;
 			ArrayList<Cart> cartlist = cartdao.allcart(customer);
-			session.setAttribute("cartinfo", cartlist);
-			session.setAttribute("cartqty", cartlist.size());
+			Iterator<Cart> cartiterator=cartlist.iterator();
+			while(cartiterator.hasNext())
+			{
+				Cart cart=(Cart) cartiterator.next();
+				total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPro_Price());
+			}
+			session.setAttribute("total",total );
+			session.setAttribute("cartinfo",cartlist );
+			
 			if(session.getAttribute("pid") != null)
 			{
 				int pid=Integer.parseInt(session.getAttribute("pid").toString());

@@ -10,7 +10,7 @@
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("img/wall16.jpg");
+    background-image: url("img/wall2.jpg");
 }
 
 * {
@@ -26,7 +26,7 @@ body {
   border-radius: 8px;
   border-color:brown;
   border-width:5px;
-  background-image:url("img/wall16.jpg");
+  background-color:pink;
   
     
 }
@@ -118,13 +118,13 @@ a {
     
 
     <button type="submit" class="registerbtn">Register</button>
-     <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
+     
   </div>
   
  
 </form:form>
+</div>
+</div>
 
 </body>
 

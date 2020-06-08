@@ -97,7 +97,7 @@ a {
 							</div>
 							<div class="col-12">
 								<p class="card-text">
-									<span class="mytext"> ${p.line1}</span>
+									<span class="mytext"> ${p.line2}</span>
 								</p>
 							</div>
 
@@ -125,7 +125,7 @@ a {
 							</div>
 							<div class="row" style="margin-top: 2%">
 
-								<a href="" class="btn btn-info" style="width: 100%"> <i
+								<a href="${cr2}/user/placeorder?addressid=${p.address_Id}" class="btn btn-info" style="width: 100%"> <i
 									class="fa fa-truck"></i>Ship Here
 								</a>
 

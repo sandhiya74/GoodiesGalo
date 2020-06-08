@@ -125,6 +125,13 @@ public class CartController {
 			}
 			float total=0;
 			cartlist=cartdao.allcart(c);
+			Iterator<Cart> cartiterator=cartlist.iterator();
+			while(cartiterator.hasNext())
+			{
+				Cart cart=(Cart) cartiterator.next();
+				total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPro_Price());
+			}
+			session.setAttribute("total",total );
 			session.setAttribute("cartinfo",cartlist );
 			model.addAttribute("cartpage", true);
 		}
@@ -140,6 +147,16 @@ public class CartController {
 		Customer cust=(Customer)session.getAttribute("custdetails");
 		if(session.getAttribute("cartinfo")== null)
 		{
+			ArrayList<Cart>cartlist=cartdao.allcart(cust);
+			float total=0;
+			Iterator<Cart> cartiterator=cartlist.iterator();
+			while(cartiterator.hasNext())
+			{
+				Cart cart=(Cart) cartiterator.next();
+				total=total+(cart.getPro_Quantity()*cart.getProdDetails().getPro_Price());
+			}
+			session.setAttribute("total",total );
+			session.setAttribute("cartinfo",cartlist );
 			session.setAttribute("cartinfo", cartdao.allcart(cust));		   
 		}
 		
