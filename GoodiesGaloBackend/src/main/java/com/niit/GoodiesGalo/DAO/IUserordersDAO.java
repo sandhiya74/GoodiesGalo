@@ -15,6 +15,6 @@ public interface IUserordersDAO {
 	
 	public ArrayList<UserOrders> allUserOrders(Customer cust);
 	
-	public UserOrders oneUserOrders(String orderid);
+	public ArrayList<UserOrders> oneUserOrders(String orderid);
 
 }

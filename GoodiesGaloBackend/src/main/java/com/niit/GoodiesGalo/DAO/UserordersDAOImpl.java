@@ -40,7 +40,7 @@ public class UserordersDAOImpl implements IUserordersDAO {
 	}
 
 	@Override
-	public boolean deleteUserOrders(UserOrders userorders) {
+	public boolean deleteUserOrders(UserOrders userorders){
 		try {
 			sessionfactory.getCurrentSession().delete(userorders);
 			return true;
@@ -55,7 +55,7 @@ public class UserordersDAOImpl implements IUserordersDAO {
 	public ArrayList<UserOrders> allUserOrders(Customer cust) {
 		try
 		{
-			ArrayList<UserOrders> userorderslist = (ArrayList<UserOrders>) sessionfactory.getCurrentSession().createCriteria(UserOrders.class).add(Restrictions.eq("customerdetails", cust)).list();
+			ArrayList<UserOrders> userorderslist = (ArrayList<UserOrders>) sessionfactory.getCurrentSession().createCriteria(UserOrders.class).add(Restrictions.eq("customer_Details", cust)).list();
 			return userorderslist;
 		}
 		catch (Exception e)
@@ -67,10 +67,10 @@ public class UserordersDAOImpl implements IUserordersDAO {
 	}
 
 	@Override
-	public UserOrders oneUserOrders(String orderid) {
+	public  ArrayList<UserOrders> oneUserOrders(String orderid) {
 		try
 		{
-			UserOrders userorders = (UserOrders) sessionfactory.getCurrentSession().createCriteria(UserOrders.class).add(Restrictions.eq("order_Id",orderid)).uniqueResult();
+			ArrayList<UserOrders> userorders = (ArrayList<UserOrders>) sessionfactory.getCurrentSession().createCriteria(UserOrders.class).add(Restrictions.eq("order_Id",orderid)).list();
 			return userorders;
 		}
 		catch(Exception e)
